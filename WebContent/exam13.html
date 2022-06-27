@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="./assets/js/jquery/jquery-1.12.4.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<button id="btn" type="button">js테스트 버튼</button>
+		<h3 id="display">이름출력영역</h3>
+	</div>
+
+</body>
+	
+	<script type="text/javascript">
+		
+		//버튼을 클릭햇을때
+		$("#btn").text("눌러봐");
+		
+		$("#btn").on("click",function(){
+			
+			var tag = $("#display");
+			
+			//tag.html("<font color ='red'>구름타고 온 종빈이</font>");
+			
+			//$("#display").html("<font color ='blue'>구름 타고온종빈이</font>");
+			
+			$("#display").text("구름을 이빠이 타고온 종빈이").css("color","blue");
+		});	
+		//h3를 클릭햇을때
+		$("#display").on("click",function(){
+			$("#display").text("구름을 안타고 왔데요").css("color","yellow")
+		});
+	</script>
+
+
+</html>
