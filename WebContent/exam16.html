@@ -88,10 +88,10 @@
 		 $("#display").val(num);
 		*/
 		
-		var newVal = $(this).val();//누른 버튼의 value값을 저장
+		var buttonVal = $(this).val();//누른 버튼의 value값을 저장
         var $display = $("#display");//인풋의 id값을 변수에 저장
         var displayVal = $display.val(); // 인풋에 입력된 값 저장
-        var result = displayVal+newVal; //이전값과 현재 누른 값을 저장
+        var result = displayVal+buttonVal; //이전값과 현재 누른 값을 저장
         $display.val(result);//인풋의 value에 결과값 넣어준다
 		
         /*
@@ -125,13 +125,16 @@
 		}else if($("#display").val().includes(" / ")){
 			var dList = $("#display").val().split(" ");
 			$("#display").val(parseInt(dList[0]) / parseInt(dList[2]));
-		}else if($("#display").val().includes(" c ")){
-			$("#display").val(0); //다시
+			if(parseInt(dList[2]) == 0){
+				$("#display").val("오류");
+			}
 		}
 		
 	});
 	
-	
+	$("#reset").on("click", function(){
+		$("#display").val("0");
+	});
 	
 	
 	</script>
